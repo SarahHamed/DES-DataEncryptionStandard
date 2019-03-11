@@ -18,7 +18,6 @@ int main()
     vector<int>outSBOX(8);
     vector<int>BiSBOX(32);
     vector<int>outStraight(32);
-   // vector<int>key(48);
     vector<int>BinaryKey(48);
     vector<int>BinaryNum(32);
     string n1,n2;
@@ -66,11 +65,8 @@ int main()
          s=n2[m+2];
         if(s=="0")
         m++;
-     //   cout<<"m= "<<m<<endl;
         }
         }
-
-   // cout<<n1<<endl<<n2<<endl;
     std:: stringstream str1;
     std:: stringstream str2;
     str1<<n1;
@@ -78,129 +74,86 @@ int main()
 
     str2<<n2;
     str2>>std::hex>>key;
-    //cout<<"num= "<<num<<endl<<"key= "<<key<<endl;
-  //  std::cin >> std::hex >> num;
-  //  std::cin >> std::hex >> key;
-   // printf("%X",num);
-  //  printf("%X",key);
-   // cout<<"num= "<<num<<"   key= "<<key<<endl;
     for(int i=47;i>=h2;i--)
         {
             BinaryKey[i]=key%2;
-           // cout<<BinaryKey[i];
             key=key/2;
         }
-      /*  for(int i=0;i<48;i++)
-        {
-            cout<<BinaryKey[i];
-        }
-        cout<<endl;*/
+
     for(int i=31;i>=h1;i--)
         {
             BinaryNum[i]=num%2;
-           // cout<<BinaryNum[i];
             num=num/2;
         }
-     /*   for(int i=0;i<32;i++)
-        {
-            cout<<BinaryNum[i];
-        }*/
-      //  cout<<endl;
-      //  cout<<"exp= ";
+    
     for(int i=0;i<48;i++)
     {
         for(int j=1;j<33;j++){
             if(ExpBox[i]==j){
         outExp[i]= BinaryNum[j-1];
-       // cout<<outExp[i];
         }
     }
 }
-  //  cout<<endl;
-  //  cout<<"xor= ";
+    
     for(int i=0;i<48;i++)
     {
         outXOR[i]=outExp[i]^BinaryKey[i];
-       // cout<<outXOR[i];
     }
-   // cout<<endl;
-   // cout<<"SBOX= "<<endl;
+  
     for(int i=0;i<48;i=i+6)
-{
+    {
    x=outXOR[i]*2+outXOR[i+5];
    y=outXOR[i+1]*8+outXOR[i+2]*4+outXOR[i+3]*2+outXOR[i+4];
    switch(level){
     case 1:
         out=Sbox1[x][y];
         level++;
-        //cout<<"x= "<<x<<"y= "<<y<<endl;
         break;
     case 2:
         out=Sbox2[x][y];
         level++;
-        //cout<<"x= "<<x<<"y= "<<y<<endl;
         break;
     case 3:
         out=Sbox3[x][y];
         level++;
-        //cout<<"x= "<<x<<"y= "<<y<<endl;
         break;
     case 4:
         out=Sbox4[x][y];
         level++;
-        //cout<<"x= "<<x<<"y= "<<y<<endl;
         break;
     case 5:
         out=Sbox5[x][y];
         level++;
-        //cout<<"x= "<<x<<"y= "<<y<<endl;
         break;
     case 6:
         out=Sbox6[x][y];
         level++;
-        //cout<<"x= "<<x<<"y= "<<y<<endl;
         break;
     case 7:
         out=Sbox7[x][y];
         level++;
-        //cout<<"x= "<<x<<"y= "<<y<<endl;
         break;
     case 8:
         out=Sbox8[x][y];
         level++;
-        //cout<<"x= "<<x<<"y= "<<y<<endl;
         break;
    }
    outSBOX[level-2]=out;
     }
- /*   for(int i=0;i<8;i++)
-    {
-        cout<<outSBOX[i]<<endl;
-    }
-    cout<<endl;*/
+
 int r=7;
     for(int i=0;i<8;i++)
        {
           result=result+outSBOX[i]*pow(16,r);
           r--;
        }
-       //cout<<"hexaresult= "<<result<<endl;
-       //cout<<"binaryresult= ";
-      // cout<<"permutation= ";
+
      for(int i=31;i>=0;i--)
         {
     BiSBOX[i]=result%2;
-    //cout<<BiSBOX[i];
     result=result/2;
         }
-       // cout<<endl;
-      /*   cout<<"permutation= ";
-         for(int i=0;i<32;i++)
-        {
-            cout<<BiSBOX[i];
-        }
-        cout<<endl;*/
-//cout<<endl;
+       
     for(int i=0;i<32;i++)
     {
         for(int j=1;j<33;j++){
@@ -208,12 +161,7 @@ int r=7;
         outStraight[i]= BiSBOX[j-1];
         }
     }
-   // cout<<"a5r prmutation= ";
-  /*  for(int i=0;i<32;i++)
-    {
-        cout<<outStraight[i];
-    }
-    cout<<endl;*/
+  
    int n=0;
    result=0;
 long long   result2=0;
@@ -224,8 +172,7 @@ long long   result2=0;
            }
            n++;
        }
-       //cout<<"l rakam= "<<result2<<endl;
        printf("%X",result2);
-       //cout<<endl;
+    
     return 0;
 }
