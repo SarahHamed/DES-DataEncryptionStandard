@@ -45,21 +45,14 @@ int main()
                 {
                  if(tableNum[j]<chosen&&(tableNum[j]!=0))
                  {
-                    // cout<<"chosen= "<<chosen<<"tableNum= "<<tableNum[j]<<endl;
                      chosen=tableNum[j];
                      pos=j;
                  }
                 }
-                //printf("%d ",pos+1);
                 cout<<pos+1;
                 tableNum[pos]=0;
             }
             cout<<endl;
         }
-   /*     for(int i=0;i<in;i++)
-        {
-            cout<<tableNum[i]<<endl;
-
-        }*/
     return 0;
 }
