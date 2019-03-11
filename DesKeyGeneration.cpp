@@ -41,12 +41,6 @@ int n=0;
     OutPerm1[54]=first;
     OutPerm1[55]=second;
 
-   /* cout<<"PERM2= ";
-for(int i=0;i<56;i++)
-{
-    cout<<OutPerm1[i];
-}
-cout<<endl;*/
      for(int i=0;i<48;i++)
     {
         for(int j=1;j<57;j++){
@@ -77,61 +71,40 @@ cout<<endl;*/
 
 void keyGen1()
 {
-   /* cout<<"PERM2= ";
-for(int i=0;i<56;i++)
-{
-    cout<<OutPerm1[i];
-}
-cout<<endl;*/
     first=OutPerm1[0];
     for(int i=0;i<27;i++)
     {
         OutPerm1[i]=OutPerm1[i+1];
     }
     OutPerm1[27]=first;
-  //  cout<<"OutPerm1[28]= "<<OutPerm1[28]<<endl;
-
     first=OutPerm1[28];
-  //  cout<<"first= "<<first<<endl;
     for(int i=28;i<55;i++)
     {
         OutPerm1[i]=OutPerm1[i+1];
     }
 OutPerm1[55]=first;
-/*
-cout<<"PERM1= ";
-for(int i=0;i<56;i++)
-{
-    cout<<OutPerm1[i];
-}
-cout<<endl;*/
 
      for(int i=0;i<48;i++)
     {
         for(int j=1;j<57;j++){
             if(PC2[i]==j){
         OutPerm2[i]= OutPerm1[j-1];
-       // cout<<OutPerm2[i];
         }
     }
     }
 
-   //cout<<result<<endl;
    n=0;
    result=0;
        for(int i=47;i>=0;i--)
        {
            if(OutPerm2[i]==1){
           result=result+pow(2,n);
-          //cout<<result<<endl;
            }
            n++;
        }
-      // cout<<"result= "<<result<<endl;
     for(int i=11;i>=0;i--)
     {
         hexaNum[i]=(result)%16;
-       // cout<<hexaNum[i]<<endl;
         result=result/16;
     }
     for(int i=0;i<12;i++){
@@ -150,7 +123,6 @@ int main()
       for(int i=0;i<16-z;i++)
       input.insert(0,"0");
   }
-  //cout<<input<<endl;
    for(int i=0;i<input.length();i++){
   s=input[i];
 
