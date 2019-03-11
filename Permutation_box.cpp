@@ -21,21 +21,13 @@ int main()
     for (int i=0;i<in;i++)
     {
         scanf("%d",&tableNum[i]);
-        //cout<<tableNum[i]<<endl;
     }
     cin>>out;
-   // cout<<"out= "<<out<<"*"<<endl;
      vector<int> binaryOut(out);
          vector<int> binaryNum(out);
 
     scanf("%X",&input);
-   // cin>>input;
-  // cout<<"input= "<<input<<endl;
-
-   /* for(int j=0;j<in;j++)
-        {
-         cout<<tableNum[j]<<endl;
-        }*/
+    
         int j=0;
     for(int i=out-1;i>=0;i--)
         {
@@ -50,8 +42,6 @@ int main()
          else
             binaryNum[i]=0;
         }
-    /*for(int i=0;i<out;i++)
-        cout<<"i= "<<i<<"   "<<binaryNum[i]<<endl;*/
 
     for(int i=0;i<tableNum.size();i++)
     {
@@ -60,11 +50,7 @@ int main()
         binaryOut[i]= binaryNum[j-1];
         }
     }
- /*   for(int i=0;i<in;i++)
-    {
-        cout<<binaryOut[i]<<" ";
-    }
-       cout<<endl;*/
+
        int y=0;
        for(int i=in-1;i>=0;i--)
        {
@@ -73,20 +59,9 @@ int main()
            }
            y++;
        }
-      // cout<<result<<endl;
-       printf("%X \n",result);
+
+        printf("%X \n",result);
          cout<<endl;
-
-  /*     int y=0;
-    for(int i=0;i<in;i++)
-    {
-        y=binaryOut[in-1-i]<<i;
-        printf("%02x \n",y);
-      result=result+(binaryOut[i]<<i);
-      cout<<"result= "<<result<<endl;
-    }*/
-   // printf("%X",result);
-
 
     return 0;
 }
