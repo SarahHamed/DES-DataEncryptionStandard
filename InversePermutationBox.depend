@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1545613399 source:d:\code blocks projs\inversepermutationbox\main.cpp
-	<iostream>
-	<vector>
-	<stdio.h>
-	<stdlib.h>
-	<math.h>
-
