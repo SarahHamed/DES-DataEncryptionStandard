@@ -291,11 +291,6 @@ int main()
     cin>>PlainText;
     cin>>N;
     KeyOrPlainInBinary(BinaryKey,key);
-/*for(int i=0;i<64;i++)
-{
-    cout<<BinaryKey[i];
-}
-cout<<endl;*/
     KeyOrPlainInBinary(BinaryPlain,PlainText);
     if(N==0)
     {
@@ -379,12 +374,6 @@ cout<<endl;*/
         }
     }
     }
-/*for(int i=0;i<64;i++)
-    {
-        cout<<E[i];
-    }
-    cout<<endl;*/
-
    }
     n=0;
    result=0;
@@ -396,22 +385,6 @@ cout<<endl;*/
      n++;
     }
     }
-      /* for(int i=0;i<64;i++)
-       {
-           if(E[i]==1)
-          result=result+pow(2,n);
-           n--;
-           cout<<result<<endl;
-       }
-    for(int i=15;i>=0;i--)
-    {
-        hexaNum[i]=(result)%16;
-        cout<<hexaNum[i]<<endl;
-        result=result/16;
-    }
-    for(int i=0;i<16;i++){
-        printf("%X",hexaNum[i]);
-    }
-    cout<<endl;*/
+      
     return 0;
 }
